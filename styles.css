@@ -1,0 +1,374 @@
+
+h1 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+}
+
+h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+}
+
+h4 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+}
+
+h5 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+}
+
+.caption {
+    font-family: "Source Sans 3";
+    font-style: italic;
+    font-size: 14px;
+}
+
+.bodyBgImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    filter: brightness(0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.headerDiv {
+    display: flex;
+    width: 98%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    margin-top: 24px;
+    border-radius: 25px;
+    background-color: #333333;
+    height: fit-content;
+    font-family: "Source Sans 3";
+    padding-left: 8px;
+    padding-right: 8px;
+    
+}
+
+
+.logoImg {
+    width: 10%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.nav {   
+    text-align: center; /* Centers the text inside the .nav element */
+    color: #ffffff; /* Sets the text color */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    
+}
+
+.nav a:hover {
+    color: #ffffff;
+}
+
+
+
+.navButtons {
+    margin-top: 20px;
+    margin-bottom: 15px; 
+}
+
+.login-btn {
+    border-radius: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 85px;
+    background-color: #333333;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-color: #F48C1C;
+    color: #ffffff;
+}
+
+.signup-btn {
+    border-radius: 20px;  
+    border: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-right: 12px;
+    margin-left: 6px;
+    width: 85px;
+    background-color: #F48C1C;
+    color: white;
+}
+
+/* Add a white gradient overlay to the webpage */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 100%);
+    z-index: -1;
+    pointer-events: none; /* Make the overlay non-interactive */
+  }
+
+
+.introText {
+    margin: 64px auto;
+    text-shadow:  1px 1px 3px #000000;
+    font-family: "Quicksand";
+    color: #ffffff;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 55%;
+}
+
+.introText h1 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.introText h3 {
+    font-size: 32px;
+    font-weight: lighter;
+    text-shadow: 1px 1px 3px #000000;
+    font-family: "Source Sans 3";
+}
+
+.learnMore {
+    border-radius: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 142px;
+    background-color: #333333;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-color: #F48C1C;
+    color: #ffffff;
+    margin-top: 48px;
+    box-shadow: 2px 2px 5px #000000;
+    font-family: "Source Sans 3";
+}
+
+button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+    
+
+.introVid {
+    margin-right: 15px;
+    margin-top: none;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.mid-belt {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    height: 800px,
+}
+
+.vid-text {
+    padding: 100px;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.vid-text h1 {
+    font-weight: bold;
+    font-family: "Quicksand";
+}
+
+
+.vid-text h3 {
+    font-size: 24px;
+    font-weight: lighter;
+    font-family: "Source Sans 3";
+    color: #000000;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: none;
+    margin-bottom: 50px;
+}
+/* For About Section */
+.lower-section {
+    position: relative;
+    width: 100%;
+}
+
+.about-img {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.home-about {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Matches the height of the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.home-about h1 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.home-about p {
+    font-size: 24px;
+    font-weight: lighter;
+    text-shadow: 1px 1px 3px #000000;
+    font-family: "Source Sans 3";
+}
+
+/* For Footer Styling */
+footer {
+    width: 100%;
+    bottom: 0;
+    margin-top: 60px;
+    background: linear-gradient(to right, #333333, #F48C1C);
+    color: #fff;
+    padding: 100px 0 30px;
+    line-height: 20px;
+    position: relative;
+    z-index: 0;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+
+.footer-col {
+    flex-basis: 22%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logo {
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-id {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.link-list {
+    list-style: none;
+    margin-bottom: 12px;
+    padding-left: 0;
+}
+
+.link-list li {
+    margin-bottom: 12px;
+}
+
+.link-list a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+}
+
+form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+form .fa {
+    font-size: 18px;
+    margin-right: 10px; 
+}
+
+form .input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fa {
+    font-size: 16px;
+    color: #ccc;
+}

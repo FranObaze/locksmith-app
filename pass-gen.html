@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LockSmith</title>
 
+    <!-- Installing CSS and bootstrap -->
+    <link rel="stylesheet" href="styles.css"> 
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <!-- For Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon_io/android-icon-192x192.png">
@@ -16,12 +20,91 @@
     <meta name="msapplication-TileImage" content="images/favicon_io/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-<!-- Installing CSS and bootstrap -->
-    <link rel="stylesheet" href="styles.css"> 
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Installing Quicksand & Source Sans 3 Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+     
+<!-- For Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<body class="pass-gen-body">
+    <header class="headerDiv">
+        <img class="logoImg" src="images/Logo without bg/Full_Logo_-_Dark-removebg-preview.png" alt="logo img">
+    
+    <!-- For the navbar-->
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/index.html">
+              <div class="nav-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+              <div class="nav-text">Home</div></a>
+          </li>  
+          
+          <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/pass-gen.html">
+                <div class="nav-icon"><i class="fa fa-key" aria-hidden="true"></i></div>
+                <div class="nav-text">Password Generator</div></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div><i class="fa fa-gamepad" aria-hidden="true"></i></div>
+                <div>Password Game</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <div><i class="fa fa-shield" aria-hidden="true"></i></div>
+                  <div>Password Manager</div></a>
+              </li>
+          </ul>
+    
+          <div class="navButtons">
+          <button class="login-btn">Log In</button>
+          <button class="signup-btn">Sign Up</button>
+          </div>
+      </header>
+    
+    <div class="pass-gen-one">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <div class="pass-gen-rand">
+            <h1>Generate a <br><span>Random Password</span></h1>
+            <div class="display">
+                <input type="text" id="password" placeholder="Password">
+                <i class="fa fa-clone" aria-hidden="true" onclick="copyPassword()"></i>
+            </div>
+            <button onclick="createPassword()"><i class="fa fa-bolt" aria-hidden="true"></i>Generate Password</button>
+        </div>
+        <script>
+            const passwordBox = document.getElementById("password");
+            const length = 12;
 
+            const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+            const number = "0123456789"
+            const symbol = "~!@#$%^&*()_+=-\][]{}/<>"
+
+            const allChars = upperCase + lowerCase + number + symbol; 
+
+            function createPassword(){
+                let password = "";
+                password += upperCase[Math.floor(Math.random() * upperCase.length)];
+                password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+                password += number[Math.floor(Math.random() * number.length)];
+                password += symbol[Math.floor(Math.random() * symbol.length)];
+
+                while (length > password.length){
+                    password += allChars[Math.floor(Math.random() * allChars.length)];
+                }
+                passwordBox.value = password;
+
+            }
+            function copyPassword(){
+                passwordBox.select();
+                document.execCommand("copy");
+            }
+        </script>
+    </div>
 </body>

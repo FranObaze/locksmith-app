@@ -82,7 +82,12 @@
       <h3>Stay safe, Stay smart</h3>
       <h3>And do it the LockSmith way!</h3>
 
-      <button class="learnMore">Learn More</button>
+ <button id="learnMoreButton" class="learnMore">Learn More</button>
+    <script>
+        document.getElementById("learnMoreButton").onclick = function () {
+            window.location.href = "index.html#aboutSection"; // Replace with your target URL
+        };
+    </script>
     </div>
 
     <div class="mid-belt">
@@ -101,7 +106,7 @@
     <div class="video-container">
       <iframe width="853" height="480" src="https://www.youtube.com/embed/wH_OzsHXKmM" title="Louis Pascal - By My God. feat Patience Charles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
     </div>
-    <div class="lower-section">
+    <div class="lower-section" id="aboutSection">
     <div class="home-about">
       <img class="about-img" src="images/About bg.jpg" alt="background with geometric shapes">
       <div>
@@ -131,12 +136,12 @@
     <div class="footer-col">
       <h4>Links</h4>
       <ul class="link-list">
-        <li><a href=""></a>Home</li>
-        <li><a href=""></a>Random Password Generator</li>
-        <li><a href=""></a>OTP Password Generator</li>
-        <li><a href=""></a>Password Game</li>
-        <li><a href=""></a>Password Manager</li>
-      </ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pass-gen.html">Random Password Generator</a></li>
+        <li><a href="pass-gen.html#otp-text">OTP Validator</a></li>
+        <li><a href="password-game.html">Password Game</a></li>
+        <li><a href="password-manager.html">Password Manager</a></li>
+    </ul>
     </div>
     <div class="footer-col">
       <h4>Newsletter</h4>
@@ -149,5 +154,6 @@
   </div>
 </footer>
 </div>
+
 </body>
 </html>

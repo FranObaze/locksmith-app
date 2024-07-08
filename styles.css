@@ -256,7 +256,7 @@ button:hover {
 .home-about {
     position: relative;
     width: 100%;
-    height: 500px; /* Matches the height of the image */
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,13 +283,14 @@ button:hover {
 footer {
     width: 100%;
     bottom: 0;
-    margin-top: 60px;
+    margin-top: 0;
     background: linear-gradient(to right, #333333, #F48C1C);
     color: #fff;
     padding: 100px 0 30px;
     line-height: 20px;
     position: relative;
     z-index: 0;
+    cursor: pointer;
 }
 
 .footer-content {
@@ -449,7 +450,8 @@ padding-top: 5%;
     justify-content: space-around; 
     background: #fff;
     margin-left: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .pass-gen-col {
@@ -468,7 +470,7 @@ padding-top: 5%;
 }
 
 .customizer {
-    margin-top: 30px;
+    margin-top: 100px;
     margin-bottom: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 5%;
@@ -495,6 +497,19 @@ padding-top: 5%;
    margin-left: auto;
    margin-right: auto;
    text-align: center;
+   animation: fadInShow 0.3s;
+}
+
+@keyframes fadInShow {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .otp-gen input {
@@ -505,17 +520,115 @@ padding-top: 5%;
 }
 .otp-gen .display {
     width: 450px;
-
+    margin-top: 2px;
 }
 
 .nextButton {
-    border-radius: 20px;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 85px;
+    border-radius: 40px;
+    width: 135px;
+    height: 50px;
     background-color: #333333;
-    padding-top: 6px;
+    padding-top: 2px;
     padding-bottom: 6px;
     border-color: #F48C1C;
     color: #ffffff;
+    margin: 3%;
+}
+
+.verifyButton {
+    border-radius: 40px;
+    width: 135px;
+    height: 50px;
+    background-color: #333333;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    border-color: #F48C1C;
+    color: #ffffff;
+    margin: 3%;
+}
+
+
+.otp-text {
+    text-align: center;
+}
+
+
+.otp-gen-step2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 5%;
+    padding: 3%;
+    width: 40%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   animation: fadInShow 0.3s;
+}
+
+@keyframes fadInShow {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.otp-group {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.otp-group input {
+    height: 50px;
+    width: 50px;
+    padding: 3%;
+    font-size: 25px;
+    text-align: center;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid #333;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.otp-gen img {
+    height: 150px;
+    margin: 15px;
+}
+
+button.disable {
+    opacity: 0.6;
+    pointer-events: none;
+    user-select: none;
+}
+
+.error-shake {
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+    }
+    25% {
+        margin-left: 0.5rem;
+    }
+    75% {
+        margin-left: -0.5rem;
+    }
+    100% {
+        margin-left: 0rem;
+    }
 }

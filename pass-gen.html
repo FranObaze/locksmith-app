@@ -46,18 +46,18 @@
     
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:5500/index.html">
+            <a class="nav-link" href="index.html">
               <div class="nav-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
               <div class="nav-text">Home</div></a>
           </li>  
           
           <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:5500/pass-gen.html">
+              <a class="nav-link" href="pass-gen.html">
                 <div class="nav-icon"><i class="fa fa-key" aria-hidden="true"></i></div>
                 <div class="nav-text">Password Generator</div></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:5500/password-game.html">
+              <a class="nav-link" href="password-game.html">
                 <div><i class="fa fa-gamepad" aria-hidden="true"></i></div>
                 <div>Password Game</div></a>
             </li>
@@ -69,9 +69,18 @@
           </ul>
     
           <div class="navButtons">
-          <button class="login-btn">Log In</button>
-          <button class="signup-btn">Sign Up</button>
-          </div>
+            <button class="login-btn" id="loginBtn">Log In</button>
+            <button class="signup-btn" id="signupBtn">Sign Up</button>
+      
+            <script>
+              document.getElementById("loginBtn").onclick = function () {
+                  window.location.href = "login.html"; // 
+              };
+              document.getElementById("signupBtn").onclick = function () {
+                  window.location.href = "login.html#register"; // 
+              };
+          </script>
+            </div>
       </header>
       
     <div class="pass-gen">

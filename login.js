@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider, signInWithRedirect, getRedirectResult } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAl5E2rg9ttiazMTedYwS-gh7pHXseGXDA",
@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+auth.languageCode = "it"
 
 const container = document.getElementById("super-container");
 const registerBtn = document.getElementById("register");
@@ -27,29 +28,28 @@ loginBtn.addEventListener("click", () => {
 });
 
 // Google Sign-In
-const googleProvider = new GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
 
-window.googleSignIn = function() {
-    auth.signInWithRedirect(googleProvider);
-}
-
-// Facebook Sign-In
-const facebookProvider = new FacebookAuthProvider();
-
-window.facebookSignIn = function() {
-    auth.signInWithRedirect(facebookProvider);
-}
-
-// Handle redirect results
-firebase.auth().getRedirectResult().then((result) => {
-    if (result.credential) {
-      // This gives you the OAuth Access Token for the provider.
-      const credential = result.credential;
-      // Use this to sign in the user
-      const user = result.user;
-      console.log(user);
-    }
+function googleSignIn() {
+  firebase.auth().signInWithPopup(provider).then((result) => {
+    var token = result.credential.accessToken;
+    var user = result.user;
+    console.log(user);
   }).catch((error) => {
-    // Handle errors here.
-    console.error(error);
+    console.log(error);
   });
+}
+
+  
+  // Facebook Sign-In
+var fbProvider = new FacebookAuthProvider();
+
+function facebookSignIn() {
+  firebase.auth().signInWithPopup(fbProvider).then((result) => {
+    var token = result.credential.accessToken;
+    var user = result.user;
+    console.log(user);
+  }).catch((error) => {
+    console.log(error);
+  });
+}

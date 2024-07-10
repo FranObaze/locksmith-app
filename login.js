@@ -35,6 +35,7 @@ function googleSignIn() {
         .then((result) => {
             const user = result.user;
             console.log(user);
+            window.location.href = "password-man.html";
         })
         .catch((error) => {
             console.error(error);
@@ -47,6 +48,37 @@ function facebookSignIn() {
         .then((result) => {
             const user = result.user;
             console.log(user);
+            window.location.href = "password-man.html";
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
+
+// Email Registration
+function emailRegister() {
+    const email = document.getElementById('reg-email').value;
+    const password = document.getElementById('reg-password').value;
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            window.location.href = "password-man.html"; // Redirect upon successful registration
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
+
+// Email Sign-In
+function emailSignIn() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            window.location.href = "password-man.html"; // Redirect upon successful login
         })
         .catch((error) => {
             console.error(error);
@@ -56,3 +88,7 @@ function facebookSignIn() {
 // Add event listeners to the social sign-in buttons
 document.querySelector(".fa-google-plus-g").parentElement.addEventListener("click", googleSignIn);
 document.querySelector(".fa-facebook-f").parentElement.addEventListener("click", facebookSignIn);
+
+// Add event listeners to the email sign-in/register buttons
+document.getElementById('email-register-btn').addEventListener('click', emailRegister);
+document.getElementById('email-login-btn').addEventListener('click', emailSignIn);

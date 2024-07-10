@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, getRedirectResult } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAl5E2rg9ttiazMTedYwS-gh7pHXseGXDA",
@@ -13,7 +13,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-auth.languageCode = "it"
+auth.languageCode = "en";
+const googleProvider = new GoogleAuthProvider();
+const fbProvider = new FacebookAuthProvider();
 
 const container = document.getElementById("super-container");
 const registerBtn = document.getElementById("register");
@@ -28,28 +30,29 @@ loginBtn.addEventListener("click", () => {
 });
 
 // Google Sign-In
-const provider = new GoogleAuthProvider();
-
 function googleSignIn() {
-  firebase.auth().signInWithPopup(provider).then((result) => {
-    var token = result.credential.accessToken;
-    var user = result.user;
-    console.log(user);
-  }).catch((error) => {
-    console.log(error);
-  });
+    signInWithPopup(auth, googleProvider)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
 }
 
-  
-  // Facebook Sign-In
-var fbProvider = new FacebookAuthProvider();
-
+// Facebook Sign-In
 function facebookSignIn() {
-  firebase.auth().signInWithPopup(fbProvider).then((result) => {
-    var token = result.credential.accessToken;
-    var user = result.user;
-    console.log(user);
-  }).catch((error) => {
-    console.log(error);
-  });
+    signInWithPopup(auth, fbProvider)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
 }
+
+// Add event listeners to the social sign-in buttons
+document.querySelector(".fa-google-plus-g").parentElement.addEventListener("click", googleSignIn);
+document.querySelector(".fa-facebook-f").parentElement.addEventListener("click", facebookSignIn);
